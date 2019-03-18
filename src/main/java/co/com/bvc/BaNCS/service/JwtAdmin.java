@@ -40,6 +40,8 @@ public class JwtAdmin {
 				.setIssuedAt(now)
 				.setSubject("subject")
 				.setIssuer("issuer")
+                                .claim("autor","user123")
+                                .claim("scope","admin;user")
 				.signWith(sinAlgorithm, apiSecrets);
 		
 		if(newDate.getTimeInMillis()>=0) {
